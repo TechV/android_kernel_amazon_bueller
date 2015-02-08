@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2010-2011 Atheros Communications Inc.
+ * Copyright (c) 2011-2012 Qualcomm Atheros, Inc.
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -72,8 +73,6 @@ enum crypto_type {
 	TKIP_CRYPT          = 0x04,
 	AES_CRYPT           = 0x08,
 	WAPI_CRYPT          = 0x10,
-	BIP_CRYPT           = 0x20,
-	KTK_CRYPT           = 0x40,
 };
 
 struct htc_endpoint_credit_dist;
@@ -81,9 +80,5 @@ struct ath6kl;
 enum htc_credit_dist_reason;
 struct ath6kl_htc_credit_info;
 
-struct ath6kl *ath6kl_core_alloc(struct device *sdev);
-int ath6kl_core_init(struct ath6kl *ar);
-void ath6kl_core_init_defer(struct work_struct *wk);
-void ath6kl_core_cleanup(struct ath6kl *ar);
 struct sk_buff *ath6kl_buf_alloc(int size);
 #endif /* COMMON_H */
